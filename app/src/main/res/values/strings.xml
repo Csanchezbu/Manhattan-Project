@@ -4,5 +4,9 @@
     <string name="app_name">Manhattan Project</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="botonNueva">Nueva partida</string>
+    <string name="botonJugadores">Jugadores</string>
+    <string name="botonTarjetas">Tarjetas</string>
+    <string name="botonCargar">Cargar partida</string>
 
 </resources>
