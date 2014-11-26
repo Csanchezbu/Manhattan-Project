@@ -8,5 +8,15 @@
     <string name="botonJugadores">Jugadores</string>
     <string name="botonTarjetas">Tarjetas</string>
     <string name="botonCargar">Cargar partida</string>
+    <string name="title_activity_jugadores">JugadoresActivity</string>
+    <string name="title_activity_nuevo_jugador">NuevoJugadorActivity</string>
+    <string name="title_activity_tarjetas">TarjetasActivity</string>
+    <string name="title_activity_nueva_tarjeta">NuevaTarjeta</string>
+    <string name="title_activity_ver_jugador">VerJugador</string>
+    <string name="title_activity_nueva_partida">NuevaPartidaActivity</string>
+    <string name="title_activity_equipos">EquiposActivity</string>
+    <string name="title_activity_formar_equipos">FormarEquiposActivity</string>
+    <string name="title_activity_partidas_guardadas">PartidasGuardadas</string>
+    <string name="title_activity_resumen_partida">ResumenPartidaActivity</string>
 
 </resources>

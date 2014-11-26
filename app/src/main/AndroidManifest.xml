@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.teampruli.manhattanproject" >
+    package="com.teampruli.manhattanproject">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.teampruli.manhattanproject.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.JugadoresActivity"
+            android:label="@string/title_activity_jugadores"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.NuevoJugadorActivity"
+            android:label="@string/title_activity_nuevo_jugador"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.TarjetasActivity"
+            android:label="@string/title_activity_tarjetas"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.NuevaTarjeta"
+            android:label="@string/title_activity_nueva_tarjeta"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.VerJugador"
+            android:label="@string/title_activity_ver_jugador"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.NuevaPartidaActivity"
+            android:label="@string/title_activity_nueva_partida"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.EquiposActivity"
+            android:label="@string/title_activity_equipos"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.FormarEquiposActivity"
+            android:label="@string/title_activity_formar_equipos"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.PartidasGuardadas"
+            android:label="@string/title_activity_partidas_guardadas"></activity>
+        <activity
+            android:name="com.teampruli.manhattanproject.ResumenPartidaActivity"
+            android:label="@string/title_activity_resumen_partida"></activity>
     </application>
 
 </manifest>
