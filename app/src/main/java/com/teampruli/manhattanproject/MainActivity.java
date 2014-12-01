@@ -1,9 +1,11 @@
 package com.teampruli.manhattanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends Activity {
@@ -34,5 +36,25 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clickNueva(View view) {
+        Intent i = new Intent(this, NuevaPartidaActivity.class);
+        startActivity(i);
+    }
+
+    public void clickCargar(View v) {
+        Intent i = new Intent(this, PartidasGuardadas.class);
+        startActivity(i);
+    }
+
+    public void clickJugadores(View v) {
+        Intent i = new Intent(this, JugadoresActivity.class);
+        startActivity(i);
+    }
+
+    public void clickTarjetas(View v) {
+        Intent i = new Intent(this, TarjetasActivity.class);
+        startActivity(i);
     }
 }

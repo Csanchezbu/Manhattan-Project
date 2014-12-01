@@ -18,6 +18,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="@string/botonNueva"
+            android:onClick="clickNueva"
             android:id="@+id/botonNueva"
             android:layout_weight="1" />
 
@@ -26,7 +27,8 @@
             android:layout_height="wrap_content"
             android:text="@string/botonCargar"
             android:id="@+id/botonCargar"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="clickCargar" />
 
     </TableRow>
 
@@ -39,14 +41,16 @@
             android:layout_height="50dp"
             android:text="@string/botonJugadores"
             android:id="@+id/botonJugadores"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="clickJugadores" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/botonTarjetas"
             android:id="@+id/botonTarjetas"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="clickTarjetas" />
 
     </TableRow>
 </TableLayout>
