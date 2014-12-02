@@ -6,19 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class ResumenPartidaActivity extends Activity {
+public class TeamsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resumen_partida);
+        setContentView(R.layout.activity_teams);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_resumen_partida, menu);
+        getMenuInflater().inflate(R.menu.menu_teams, menu);
         return true;
     }
 

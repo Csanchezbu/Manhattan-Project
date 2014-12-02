@@ -6,19 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class VerJugador extends Activity {
+public class ViewPlayer extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ver_jugador);
+        setContentView(R.layout.activity_view_player);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_ver_jugador, menu);
+        getMenuInflater().inflate(R.menu.menu_view_player, menu);
         return true;
     }
 

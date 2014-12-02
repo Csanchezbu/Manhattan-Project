@@ -6,19 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class NuevaPartidaActivity extends Activity {
+public class CardsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nueva_partida);
+        setContentView(R.layout.activity_cards);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_nueva_partida, menu);
+        getMenuInflater().inflate(R.menu.menu_cards, menu);
         return true;
     }
 

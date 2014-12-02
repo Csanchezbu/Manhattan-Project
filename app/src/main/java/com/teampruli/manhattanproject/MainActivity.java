@@ -38,23 +38,23 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clickNueva(View view) {
-        Intent i = new Intent(this, NuevaPartidaActivity.class);
+    public void clickNew(View view) {
+        Intent i = new Intent(this, NewGameActivity.class);
         startActivity(i);
     }
 
-    public void clickCargar(View v) {
-        Intent i = new Intent(this, PartidasGuardadas.class);
+    public void clickLoad(View v) {
+        Intent i = new Intent(this, SavedGames.class);
         startActivity(i);
     }
 
-    public void clickJugadores(View v) {
-        Intent i = new Intent(this, JugadoresActivity.class);
+    public void clickPlayers(View v) {
+        Intent i = new Intent(this, PlayersActivity.class);
         startActivity(i);
     }
 
-    public void clickTarjetas(View v) {
-        Intent i = new Intent(this, TarjetasActivity.class);
+    public void clickCards(View v) {
+        Intent i = new Intent(this, CardsActivity.class);
         startActivity(i);
     }
 }

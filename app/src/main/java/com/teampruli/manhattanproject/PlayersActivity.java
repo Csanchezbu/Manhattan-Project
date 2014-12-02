@@ -6,19 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class PartidasGuardadas extends Activity {
+public class PlayersActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_partidas_guardadas);
+        setContentView(R.layout.activity_players);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_partidas_guardadas, menu);
+        getMenuInflater().inflate(R.menu.menu_players, menu);
         return true;
     }
 
