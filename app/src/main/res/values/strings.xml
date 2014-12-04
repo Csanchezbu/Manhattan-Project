@@ -18,5 +18,7 @@
     <string name="title_activity_formar_equipos">FormarEquiposActivity</string>
     <string name="title_activity_partidas_guardadas">PartidasGuardadas</string>
     <string name="title_activity_resumen_partida">ResumenPartidaActivity</string>
+    <string name="players_empty_list">No hay jugadores</string>
+    <string name="button_add_player">Nuevo jugador</string>
 
 </resources>

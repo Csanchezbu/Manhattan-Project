@@ -14,7 +14,6 @@ public class ViewPlayer extends Activity {
         setContentView(R.layout.activity_view_player);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
