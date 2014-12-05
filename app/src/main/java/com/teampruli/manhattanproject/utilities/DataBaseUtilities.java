@@ -1,5 +1,6 @@
 package com.teampruli.manhattanproject.utilities;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -19,6 +20,7 @@ public class DataBaseUtilities {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             playersList.add(cursorToPlayer(cursor));
+            cursor.moveToNext();
         }
         cursor.close();
         return playersList;
@@ -26,5 +28,18 @@ public class DataBaseUtilities {
 
     private static Player cursorToPlayer(Cursor cursor) {
         return new Player(cursor.getString(cursor.getColumnIndex(DataBaseOpenHelper.PLAYERS_COLUMN_NAME)), cursor.getInt(cursor.getColumnIndex(DataBaseOpenHelper.PLAYERS_COLUMN_ID)));
+    }
+
+    public static Player getPlayer(SQLiteDatabase db, String playerName) {
+        Cursor cursor;
+        cursor = db.rawQuery("SELECT * FROM " + DataBaseOpenHelper.TABLE_PLAYERS + " WHERE " + DataBaseOpenHelper.PLAYERS_COLUMN_NAME + " = '" + playerName + "'", null);
+        return cursorToPlayer(cursor);
+    }
+
+    public static long addPlayer(SQLiteDatabase db, Player player) {
+        ContentValues values = new ContentValues();
+        values.put(DataBaseOpenHelper.PLAYERS_COLUMN_NAME, player.getName());
+        return db.insert(DataBaseOpenHelper.TABLE_PLAYERS, null, values);
+
     }
 }

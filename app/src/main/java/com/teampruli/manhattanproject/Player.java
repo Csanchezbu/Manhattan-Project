@@ -8,9 +8,9 @@ import android.os.Parcelable;
  */
 public class Player implements Parcelable {
     private String name;
-    private int id;
+    private long id;
 
-    public Player(String name, int id) {
+    public Player(String name, long id) {
         this.name = name;
         this.id = id;
     }
@@ -19,7 +19,7 @@ public class Player implements Parcelable {
         this.name = name;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -27,7 +27,7 @@ public class Player implements Parcelable {
         return name;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class Player implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeLong(this.id);
         dest.writeString(this.name);
     }
 

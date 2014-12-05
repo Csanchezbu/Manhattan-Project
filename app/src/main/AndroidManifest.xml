@@ -18,34 +18,34 @@
         </activity>
         <activity
             android:name=".PlayersActivity"
-            android:label="@string/title_activity_jugadores"></activity>
+            android:label="@string/title_activity_players"></activity>
         <activity
             android:name=".NewPlayerActivity"
-            android:label="@string/title_activity_nuevo_jugador"></activity>
+            android:label="@string/title_activity_new_player"></activity>
         <activity
             android:name=".CardsActivity"
-            android:label="@string/title_activity_tarjetas"></activity>
+            android:label="@string/title_activity_cards"></activity>
         <activity
             android:name=".NewCard"
-            android:label="@string/title_activity_nueva_tarjeta"></activity>
+            android:label="@string/title_activity_new_card"></activity>
         <activity
             android:name=".ViewPlayer"
-            android:label="@string/title_activity_ver_jugador"></activity>
+            android:label="@string/title_activity_view_player"></activity>
         <activity
             android:name=".NewGameActivity"
-            android:label="@string/title_activity_nueva_partida"></activity>
+            android:label="@string/title_activity_new_game"></activity>
         <activity
             android:name=".TeamsActivity"
-            android:label="@string/title_activity_equipos"></activity>
+            android:label="@string/title_activity_teams"></activity>
         <activity
             android:name=".CreateTeamsActivity"
-            android:label="@string/title_activity_formar_equipos"></activity>
+            android:label="@string/title_activity_create_teams"></activity>
         <activity
             android:name=".SavedGames"
-            android:label="@string/title_activity_partidas_guardadas"></activity>
+            android:label="@string/title_activity_saved_games"></activity>
         <activity
             android:name=".GameSummaryActivity"
-            android:label="@string/title_activity_resumen_partida"></activity>
+            android:label="@string/title_activity_game_summary"></activity>
     </application>
 
 </manifest>
