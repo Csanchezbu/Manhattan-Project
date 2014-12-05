@@ -42,4 +42,9 @@ public class DataBaseUtilities {
         return db.insert(DataBaseOpenHelper.TABLE_PLAYERS, null, values);
 
     }
+
+    public static void deletePlayer(SQLiteDatabase db, Player selectedPlayer) {
+        db.delete(DataBaseOpenHelper.TABLE_PLAYERS, DataBaseOpenHelper.PLAYERS_COLUMN_ID + " = '" + selectedPlayer.getId() + "'", null);
+
+    }
 }

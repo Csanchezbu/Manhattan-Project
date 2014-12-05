@@ -15,6 +15,10 @@ public class Player implements Parcelable {
         this.id = id;
     }
 
+    public Player(Parcel in) {
+        readFromParcel(in);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -32,6 +36,21 @@ public class Player implements Parcelable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        Player player = (Player) o;
+        if (id != player.id) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (int) (id ^ (id >>> 32));
+        return result;
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }
@@ -43,7 +62,22 @@ public class Player implements Parcelable {
     }
 
     public void readFromParcel(Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readLong();
         this.name = in.readString();
     }
+
+    public static final Parcelable.Creator<Player> CREATOR
+            = new Parcelable.Creator<Player>() {
+
+        @Override
+        public Player createFromParcel(Parcel in) {
+            return new Player(in);
+        }
+
+        @Override
+        public Player[] newArray(int size) {
+            return new Player[size];
+        }
+    };
+
 }

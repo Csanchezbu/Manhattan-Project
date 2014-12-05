@@ -1,17 +1,27 @@
 package com.teampruli.manhattanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class ViewPlayer extends Activity {
 
+    public static int RESULT_DELETE = 2;
+    TextView txtName;
+    Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_player);
+        txtName = (TextView) findViewById(R.id.txtName);
+        this.player = getIntent().getParcelableExtra("player");
+        txtName.setText(player.getName());
+
     }
 
     @Override
@@ -34,5 +44,18 @@ public class ViewPlayer extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deletePlayer(View v) {
+        setResult(RESULT_DELETE);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent();
+        i.putExtra("delete", -1);
+        setResult(RESULT_CANCELED, i);
+        super.onBackPressed();
     }
 }

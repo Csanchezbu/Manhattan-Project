@@ -3,7 +3,6 @@ package com.teampruli.manhattanproject;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +18,10 @@ import java.util.List;
 
 public class PlayersActivity extends ListActivity {
     public final int NEW_PLAYER_ACTIVITY = 001;
+    public final int VIEW_PLAYER_ACTIVITY = 002;
     private PlayersManager playersManager;
     List<Player> playerList;
+    Player selectedPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +50,10 @@ public class PlayersActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        this.selectedPlayer = playerList.get(position);
         Intent i = new Intent(this, ViewPlayer.class);
-        i.putExtra("idPlayer", playerList.get(position));
-        startActivity(i);
+        i.putExtra("player", this.selectedPlayer);
+        startActivityForResult(i, VIEW_PLAYER_ACTIVITY);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,22 +84,28 @@ public class PlayersActivity extends ListActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            Log.d("manhattan", "1");
-            switch (requestCode) {
-                case NEW_PLAYER_ACTIVITY:
-                    Log.d("manhattan", "2");
+
+        switch (requestCode) {
+            case NEW_PLAYER_ACTIVITY:
+                if (resultCode == RESULT_OK) {
                     String playerName = data.getStringExtra("name");
                     Toast.makeText(this, R.string.text_new_player_added, Toast.LENGTH_SHORT).show();
                     this.playersManager.newPlayer(playerName);
                     this.playerList = this.playersManager.getPlayerList();
                     draw();
-                    break;
-                default:
-                    Log.d("manhattan", "3");
-                    break;
-            }
+                }
+                break;
+            case VIEW_PLAYER_ACTIVITY:
+
+                if (resultCode == ViewPlayer.RESULT_DELETE) {
+                    playersManager.deletePlayer(this.selectedPlayer);
+                    draw();
+                }
+                break;
+            default:
+                break;
         }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 }

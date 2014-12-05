@@ -23,5 +23,6 @@
     <string name="textName">Nombre</string>
     <string name="save">Guardar</string>
     <string name="hello_world">cambiaaar</string>
+    <string name="delete">Borrar</string>
 
 </resources>

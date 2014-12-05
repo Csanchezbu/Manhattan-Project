@@ -51,4 +51,9 @@ public class PlayersManager {
     public SQLiteDatabase getDb() {
         return db;
     }
+
+    public void deletePlayer(Player selectedPlayer) {
+        DataBaseUtilities.deletePlayer(db, selectedPlayer);
+        this.playerList.remove(selectedPlayer);
+    }
 }
