@@ -26,7 +26,7 @@
             android:name=".CardsActivity"
             android:label="@string/title_activity_cards"></activity>
         <activity
-            android:name=".NewCard"
+            android:name=".NewCardActivity"
             android:label="@string/title_activity_new_card"></activity>
         <activity
             android:name=".ViewPlayer"

@@ -1,12 +1,15 @@
 package com.teampruli.manhattanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
-public class NewCard extends Activity {
+public class NewCardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +38,15 @@ public class NewCard extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clickSave(View view) {
+        EditText eTitle = (EditText) findViewById(R.id.editName);
+        EditText eDescription = (EditText) findViewById(R.id.editTitle);
+        Intent i = new Intent();
+        i.putExtra("title", eTitle.getText().toString());
+        i.putExtra("description", eDescription.getText().toString());
+        setResult(RESULT_OK, i);
+        finish();
     }
 }
