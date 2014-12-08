@@ -24,5 +24,11 @@
     <string name="save">Guardar</string>
     <string name="hello_world">cambiaaar</string>
     <string name="delete">Borrar</string>
+    <string name="button_add_card">Nueva tarjeta</string>
+    <string name="cards_empty_list">No hay ninguna tarjeta</string>
+    <string name="textTitle">Titulo</string>
+    <string name="textDescription">Descripción</string>
+    <string name="text_new_card_added">Nueva tarjeta añadida</string>
+    <string name="title_activity_view_card">Tarjeta</string>
 
 </resources>
