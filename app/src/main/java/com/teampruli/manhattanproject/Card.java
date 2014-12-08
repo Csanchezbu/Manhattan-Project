@@ -16,6 +16,12 @@ public class Card implements Parcelable {
         this.id = id;
     }
 
+    public Card(Parcel in) {
+        this.id = in.readLong();
+        this.title = in.readString();
+        this.description = in.readString();
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -49,20 +55,27 @@ public class Card implements Parcelable {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public static final Parcelable.Creator<Card> CREATOR
+            = new Parcelable.Creator<Card>() {
+
+        @Override
+        public Card createFromParcel(Parcel in) {
+            return new Card(in);
+        }
+
+        @Override
+        public Card[] newArray(int size) {
+            return new Card[size];
+        }
+    };
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Card card = (Card) o;
-
-        if (id != card.id) return false;
-
-        return true;
+        return id == card.id;
     }
 
     @Override

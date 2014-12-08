@@ -6,22 +6,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 
-public class NewCardActivity extends Activity {
+public class ViewCard extends Activity {
+
+    public static int RESULT_DELETE = 2;
+    private TextView txtTitle;
+    private TextView txtDesc;
+    private Card card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_card);
-    }
+        setContentView(R.layout.activity_view_card);
+        txtTitle = (TextView) findViewById(R.id.txtTitle);
+        txtDesc = (TextView) findViewById(R.id.txtDescription);
+        this.card = getIntent().getParcelableExtra("card");
+        txtTitle.setText(this.card.getTitle());
+        txtDesc.setText(this.card.getDescription());
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_new_card, menu);
+        getMenuInflater().inflate(R.menu.menu_view_player, menu);
         return true;
     }
 
@@ -40,13 +50,16 @@ public class NewCardActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clickSave(View view) {
-        EditText eTitle = (EditText) findViewById(R.id.editTitle);
-        EditText eDescription = (EditText) findViewById(R.id.editDescription);
+    @Override
+    public void onBackPressed() {
         Intent i = new Intent();
-        i.putExtra("title", eTitle.getText().toString());
-        i.putExtra("description", eDescription.getText().toString());
-        setResult(RESULT_OK, i);
+        i.putExtra("delete", -1);
+        setResult(RESULT_CANCELED, i);
+        super.onBackPressed();
+    }
+
+    public void deleteCard(View view) {
+        setResult(RESULT_DELETE);
         finish();
     }
 }

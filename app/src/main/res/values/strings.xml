@@ -28,5 +28,7 @@
     <string name="cards_empty_list">No hay ninguna tarjeta</string>
     <string name="textTitle">Titulo</string>
     <string name="textDescription">Descripción</string>
+    <string name="text_new_card_added">Nueva tarjeta añadida</string>
+    <string name="title_activity_view_card">Tarjeta</string>
 
 </resources>

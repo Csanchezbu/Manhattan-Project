@@ -18,8 +18,8 @@ import java.util.List;
 
 public class CardsActivity extends ListActivity {
 
-    private static final int NEW_CARD_ACTIVITY = 001;
-    public final int VIEW_CARD_ACTIVITY = 002;
+    public static final int NEW_CARD_ACTIVITY = 1;
+    public static final int VIEW_CARD_ACTIVITY = 2;
     private CardsManager cardsManager;
     List<Card> cardList;
     Card selectedCard;
@@ -29,6 +29,9 @@ public class CardsActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
+        cardsManager = CardsManager.getInstance();
+        this.cardList = cardsManager.getCardList();
+        draw();
     }
 
 
@@ -65,15 +68,15 @@ public class CardsActivity extends ListActivity {
         switch (requestCode) {
             case NEW_CARD_ACTIVITY:
                 if (resultCode == RESULT_OK) {
-                    String cardName = data.getStringExtra("name");
-                    Toast.makeText(this, R.string.text_new_player_added, Toast.LENGTH_SHORT).show();
-                    this.cardsManager.newCard(cardName);
+                    String cardName = data.getStringExtra("title");
+                    String cardDesc = data.getStringExtra("description");
+                    this.cardsManager.newCard(cardName, cardDesc);
                     this.cardList = this.cardsManager.getCardList();
+                    Toast.makeText(this, R.string.text_new_card_added, Toast.LENGTH_SHORT).show();
                     draw();
                 }
                 break;
             case VIEW_CARD_ACTIVITY:
-
                 if (resultCode == ViewPlayer.RESULT_DELETE) {
                     cardsManager.deletePlayer(this.selectedCard);
                     draw();
@@ -111,7 +114,7 @@ public class CardsActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         this.selectedCard = cardList.get(position);
-        Intent i = new Intent(this, ViewPlayer.class);
+        Intent i = new Intent(this, ViewCard.class);
         i.putExtra("card", this.selectedCard);
         startActivityForResult(i, VIEW_CARD_ACTIVITY);
     }

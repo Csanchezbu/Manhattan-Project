@@ -16,10 +16,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PlayersManager playersManager = PlayersManager.getInstance();
+        CardsManager cardsManager = CardsManager.getInstance();
         DataBaseOpenHelper openHelper = new DataBaseOpenHelper(this, DataBaseOpenHelper.DATABASE_NAME, null, DataBaseOpenHelper.DATABASE_CURRENT_VERSION);
         SQLiteDatabase db = openHelper.getWritableDatabase();
         playersManager.setDb(db);
         playersManager.readPlayersFromDataBase();
+        cardsManager.setDb(db);
+        cardsManager.readCardsFromDataBase();
     }
 
 

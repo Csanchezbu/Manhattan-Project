@@ -1,6 +1,5 @@
 package com.teampruli.manhattanproject;
 
-
 import android.database.sqlite.SQLiteDatabase;
 
 import com.teampruli.manhattanproject.utilities.DataBaseUtilities;
@@ -18,7 +17,7 @@ public class PlayersManager {
     }
 
     private PlayersManager() {
-        this.playerList = new ArrayList<Player>();
+        this.playerList = new ArrayList<>();
     }
 
     public void addPlayer(Player player) {
@@ -33,11 +32,10 @@ public class PlayersManager {
         return playerList;
     }
 
-
     public void newPlayer(String playerName) {
         Player player = new Player(playerName, 0);
         player.setId(DataBaseUtilities.addPlayer(db, player));
-        this.playerList.add(player);
+        this.addPlayer(player);
     }
 
     public void readPlayersFromDataBase() {
@@ -46,10 +44,6 @@ public class PlayersManager {
 
     public void setDb(SQLiteDatabase db) {
         this.db = db;
-    }
-
-    public SQLiteDatabase getDb() {
-        return db;
     }
 
     public void deletePlayer(Player selectedPlayer) {
