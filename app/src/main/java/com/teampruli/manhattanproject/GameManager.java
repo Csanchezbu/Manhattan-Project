@@ -8,6 +8,9 @@ import java.util.Random;
 
 
 public class GameManager {
+
+    private static final int MIN_PLAYERS_TEAM = 2;
+    private static final int MIN_TEAMS = 2;
     private static GameManager ourInstance = new GameManager();
     private List<Team> teamList;
     private Player[] playersList;
@@ -93,5 +96,13 @@ public class GameManager {
 
     public int getNumberOfPlayers(int teams) {
         return this.playersList.length / teams;
+    }
+
+    public int getMinTeams() {
+        return MIN_TEAMS;
+    }
+
+    public int getMinPlayersTeam() {
+        return MIN_PLAYERS_TEAM;
     }
 }

@@ -17,8 +17,6 @@ import java.util.List;
 
 public class TeamsActivity extends Activity {
 
-    private static final int MIN_PLAYERS_TEAM = 2;
-    private static final int MIN_TEAMS = 2;
     private GameManager gameManager;
     private ListView teamsView;
     private NumberPicker pickerPlayers;
@@ -31,9 +29,9 @@ public class TeamsActivity extends Activity {
         gameManager = GameManager.getInstance();
         gameManager.setPlayersList(getIntent().getParcelableArrayExtra("players"));
         teamsView.setEmptyView(findViewById(R.id.empty_list));
-        pickerPlayers.setMinValue(MIN_PLAYERS_TEAM);
+        pickerPlayers.setMinValue(gameManager.getMinPlayersTeam());
         pickerPlayers.setMaxValue(gameManager.getMaxPlayersTeam());
-        pickerTeams.setMinValue(MIN_TEAMS);
+        pickerTeams.setMinValue(gameManager.getMinTeams());
         pickerTeams.setMaxValue(gameManager.getMaxTeams());
 
         pickerPlayers.setOnScrollListener(new NumberPicker.OnScrollListener() {
