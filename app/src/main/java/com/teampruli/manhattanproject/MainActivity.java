@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
     }
 
     public void clickNew(View view) {
-        Intent i = new Intent(this, NewGameActivity.class);
+        Intent i = new Intent(this, SelectPlayers.class);
         startActivity(i);
     }
 

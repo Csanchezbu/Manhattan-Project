@@ -35,7 +35,7 @@
             android:name=".ViewCard"
             android:label="@string/title_activity_view_card" />
         <activity
-            android:name=".NewGameActivity"
+            android:name=".SelectPlayers"
             android:label="@string/title_activity_new_game" />
         <activity
             android:name=".TeamsActivity"

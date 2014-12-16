@@ -30,5 +30,12 @@
     <string name="textDescription">Descripción</string>
     <string name="text_new_card_added">Nueva tarjeta añadida</string>
     <string name="title_activity_view_card">Tarjeta</string>
+    <string name="who_plays">¿Quién juega?</string>
+    <string name="button_continue">Continuar</string>
+    <string name="new_teams">Nuevos equipos</string>
+    <string name="players_per_team">Jugadores por equipo</string>
+    <string name="team_number">Numero de equipos</string>
+    <string name="empty_teams">Lista de equipos vacía</string>
+    <string name="text_min_players">El número mínimo de jugadores es 4</string>
 
 </resources>
