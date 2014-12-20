@@ -25,6 +25,7 @@ public class PlayersActivity extends ListActivity {
     private PlayersManager playersManager;
     List<Player> playerList;
     Player selectedPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +55,11 @@ public class PlayersActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         this.selectedPlayer = playerList.get(position);
-        Intent i = new Intent(this, ViewPlayer.class);
+        Intent i = new Intent(this, ViewPlayerActivity.class);
         i.putExtra("player", this.selectedPlayer);
         startActivityForResult(i, VIEW_PLAYER_ACTIVITY);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -100,7 +102,7 @@ public class PlayersActivity extends ListActivity {
                 break;
             case VIEW_PLAYER_ACTIVITY:
 
-                if (resultCode == ViewPlayer.RESULT_DELETE) {
+                if (resultCode == ViewPlayerActivity.RESULT_DELETE) {
                     playersManager.deletePlayer(this.selectedPlayer);
                     draw();
                 }

@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.teampruli.manhattanproject.SavedGames">
+    tools:context="com.teampruli.manhattanproject.SavedGamesActivity">
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"

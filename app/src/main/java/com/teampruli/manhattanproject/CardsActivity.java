@@ -80,7 +80,7 @@ public class CardsActivity extends ListActivity {
                 }
                 break;
             case VIEW_CARD_ACTIVITY:
-                if (resultCode == ViewPlayer.RESULT_DELETE) {
+                if (resultCode == ViewPlayerActivity.RESULT_DELETE) {
                     cardsManager.deletePlayer(this.selectedCard);
                     draw();
                 }
@@ -117,7 +117,7 @@ public class CardsActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         this.selectedCard = cardList.get(position);
-        Intent i = new Intent(this, ViewCard.class);
+        Intent i = new Intent(this, ViewCardActivity.class);
         i.putExtra("card", this.selectedCard);
         startActivityForResult(i, VIEW_CARD_ACTIVITY);
     }

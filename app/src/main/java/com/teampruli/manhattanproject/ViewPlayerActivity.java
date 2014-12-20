@@ -8,25 +8,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.teampruli.manhattanproject.BaseClases.Card;
+import com.teampruli.manhattanproject.BaseClases.Player;
 
 
-public class ViewCard extends Activity {
+public class ViewPlayerActivity extends Activity {
 
     public static int RESULT_DELETE = 2;
-    private TextView txtTitle;
-    private TextView txtDesc;
-    private Card card;
+    TextView txtName;
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_card);
-        txtTitle = (TextView) findViewById(R.id.txtTitle);
-        txtDesc = (TextView) findViewById(R.id.txtDescription);
-        this.card = getIntent().getParcelableExtra("card");
-        txtTitle.setText(this.card.getTitle());
-        txtDesc.setText(this.card.getDescription());
+        setContentView(R.layout.activity_view_player);
+        txtName = (TextView) findViewById(R.id.txtName);
+        this.player = getIntent().getParcelableExtra("player");
+        txtName.setText(player.getName());
 
     }
 
@@ -52,16 +49,16 @@ public class ViewCard extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void deletePlayer(View v) {
+        setResult(RESULT_DELETE);
+        finish();
+    }
+
     @Override
     public void onBackPressed() {
         Intent i = new Intent();
         i.putExtra("delete", -1);
         setResult(RESULT_CANCELED, i);
         super.onBackPressed();
-    }
-
-    public void deleteCard(View view) {
-        setResult(RESULT_DELETE);
-        finish();
     }
 }

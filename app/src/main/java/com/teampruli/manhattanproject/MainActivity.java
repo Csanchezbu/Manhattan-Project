@@ -52,12 +52,12 @@ public class MainActivity extends Activity {
     }
 
     public void clickNew(View view) {
-        Intent i = new Intent(this, SelectPlayers.class);
+        Intent i = new Intent(this, SelectPlayersActivity.class);
         startActivity(i);
     }
 
     public void clickLoad(View v) {
-        Intent i = new Intent(this, SavedGames.class);
+        Intent i = new Intent(this, SavedGamesActivity.class);
         startActivity(i);
     }
 

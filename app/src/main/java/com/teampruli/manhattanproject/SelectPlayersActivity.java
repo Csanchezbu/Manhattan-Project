@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SelectPlayers extends ListActivity {
+public class SelectPlayersActivity extends ListActivity {
 
     private static final int NEW_PLAYER_ACTIVITY = 1;
     private List<String> names;

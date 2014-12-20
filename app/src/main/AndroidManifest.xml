@@ -29,13 +29,13 @@
             android:name=".NewCardActivity"
             android:label="@string/title_activity_new_card" />
         <activity
-            android:name=".ViewPlayer"
+            android:name=".ViewPlayerActivity"
             android:label="@string/title_activity_view_player" />
         <activity
-            android:name=".ViewCard"
+            android:name=".ViewCardActivity"
             android:label="@string/title_activity_view_card" />
         <activity
-            android:name=".SelectPlayers"
+            android:name=".SelectPlayersActivity"
             android:label="@string/title_activity_new_game" />
         <activity
             android:name=".TeamsActivity"
@@ -44,7 +44,7 @@
             android:name=".CreateTeamsActivity"
             android:label="@string/title_activity_create_teams" />
         <activity
-            android:name=".SavedGames"
+            android:name=".SavedGamesActivity"
             android:label="@string/title_activity_saved_games" />
         <activity
             android:name=".GameSummaryActivity"
