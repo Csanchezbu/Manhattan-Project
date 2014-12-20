@@ -13,6 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.teampruli.manhattanproject.BaseClases.Card;
+import com.teampruli.manhattanproject.BaseClases.CardsManager;
+
 import java.util.List;
 
 

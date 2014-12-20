@@ -8,6 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.teampruli.manhattanproject.BaseClases.CardsManager;
+import com.teampruli.manhattanproject.BaseClases.PlayersManager;
+import com.teampruli.manhattanproject.utilities.DataBaseOpenHelper;
+
 
 public class MainActivity extends Activity {
 

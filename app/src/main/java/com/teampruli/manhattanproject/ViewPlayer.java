@@ -8,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.teampruli.manhattanproject.BaseClases.Player;
+
 
 public class ViewPlayer extends Activity {
 
     public static int RESULT_DELETE = 2;
     TextView txtName;
     Player player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -4,9 +4,8 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.teampruli.manhattanproject.Card;
-import com.teampruli.manhattanproject.DataBaseOpenHelper;
-import com.teampruli.manhattanproject.Player;
+import com.teampruli.manhattanproject.BaseClases.Card;
+import com.teampruli.manhattanproject.BaseClases.Player;
 
 import java.util.ArrayList;
 

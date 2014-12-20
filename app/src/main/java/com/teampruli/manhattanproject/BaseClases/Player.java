@@ -1,11 +1,8 @@
-package com.teampruli.manhattanproject;
+package com.teampruli.manhattanproject.BaseClases;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Carlos on 02/12/2014.
- */
 public class Player implements Parcelable {
     private String name;
     private long id;
@@ -37,10 +34,10 @@ public class Player implements Parcelable {
 
     @Override
     public boolean equals(Object o) {
+        if (this.getClass() == o.getClass()) return true;
         if (this == o) return true;
         Player player = (Player) o;
-        if (id != player.id) return false;
-        return true;
+        return id == player.id;
     }
 
     @Override

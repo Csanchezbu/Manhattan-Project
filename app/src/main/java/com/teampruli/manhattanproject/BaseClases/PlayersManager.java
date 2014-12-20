@@ -1,4 +1,4 @@
-package com.teampruli.manhattanproject;
+package com.teampruli.manhattanproject.BaseClases;
 
 import android.database.sqlite.SQLiteDatabase;
 

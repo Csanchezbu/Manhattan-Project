@@ -1,4 +1,4 @@
-package com.teampruli.manhattanproject;
+package com.teampruli.manhattanproject.utilities;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

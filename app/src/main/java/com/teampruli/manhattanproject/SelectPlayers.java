@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.teampruli.manhattanproject.BaseClases.Player;
+import com.teampruli.manhattanproject.BaseClases.PlayersManager;
+
 import java.util.ArrayList;
 import java.util.List;
 

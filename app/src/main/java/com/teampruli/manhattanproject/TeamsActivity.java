@@ -12,6 +12,9 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import com.teampruli.manhattanproject.BaseClases.GameManager;
+import com.teampruli.manhattanproject.BaseClases.Team;
+
 import java.util.List;
 
 

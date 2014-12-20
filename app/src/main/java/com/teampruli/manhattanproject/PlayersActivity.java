@@ -13,12 +13,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.teampruli.manhattanproject.BaseClases.Player;
+import com.teampruli.manhattanproject.BaseClases.PlayersManager;
+
 import java.util.List;
 
 
 public class PlayersActivity extends ListActivity {
-    public final int NEW_PLAYER_ACTIVITY = 001;
-    public final int VIEW_PLAYER_ACTIVITY = 002;
+    public final int NEW_PLAYER_ACTIVITY = 1;
+    public final int VIEW_PLAYER_ACTIVITY = 2;
     private PlayersManager playersManager;
     List<Player> playerList;
     Player selectedPlayer;
