@@ -8,6 +8,8 @@ public class Team {
     private String name;
     private int maxPlayers;
     private List<Player> playerList;
+    private int indexPlayer;
+    private int indexGuess;
 
     public Team(int maxPlayers, String name) {
         this.name = name;
@@ -41,5 +43,27 @@ public class Team {
    */
     public boolean isOK() {
         return (this.playerList.size() == this.maxPlayers) || (this.playerList.size() == this.maxPlayers - 1);
+    }
+
+    public Player currentPlayer() {
+        return this.playerList.get(indexPlayer);
+    }
+
+    public Player currentGuess() {
+        return this.playerList.get(indexGuess);
+    }
+
+    private void updateIndex() {
+        this.indexGuess = (this.indexPlayer + 1) % this.playerList.size();
+    }
+
+    public void startIndex() {
+        this.indexPlayer = 0;
+        updateIndex();
+    }
+
+    public void nextPlayer() {
+        this.indexPlayer = this.indexGuess;
+        this.updateIndex();
     }
 }

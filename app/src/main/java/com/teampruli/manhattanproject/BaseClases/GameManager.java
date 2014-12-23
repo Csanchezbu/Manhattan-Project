@@ -3,6 +3,7 @@ package com.teampruli.manhattanproject.BaseClases;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -15,6 +16,10 @@ public class GameManager {
     private List<Team> teamList;
     private Player[] playersList;
     private Random randomGenerator;
+    private List<Card> cardList;
+    private int round;
+    private int indexTeam;
+
 
     public static GameManager getInstance() {
         return ourInstance;
@@ -22,6 +27,7 @@ public class GameManager {
 
     private GameManager() {
         teamList = new ArrayList<>();
+        cardList = new ArrayList<>();
         randomGenerator = new Random();
     }
 
@@ -66,9 +72,6 @@ public class GameManager {
         return teamList;
     }
 
-   /* public void setPlayersList(Player[] playersList) {
-        this.playersList = playersList;
-    }*/
 
     public int getMaxPlayersTeam() {
         return playersList.length / 2 + playersList.length % 2;
@@ -104,5 +107,31 @@ public class GameManager {
 
     public int getMinPlayersTeam() {
         return MIN_PLAYERS_TEAM;
+    }
+
+    public void startGame(List<Card> cardList) {
+        Collections.shuffle(cardList);
+        this.cardList = cardList;
+        Collections.shuffle(this.teamList);
+        this.round = 1;
+        this.indexTeam = 0;
+        for (int i = 0; i < this.teamList.size(); i++) {
+            this.teamList.get(i).startIndex();
+        }
+
+    }
+
+
+    public int getRound() {
+        return round;
+    }
+
+    public Team currentTeam() {
+
+        return this.teamList.get(indexTeam);
+    }
+
+    public void nextTeam() {
+        this.indexTeam = (this.indexTeam + 1) % this.teamList.size();
     }
 }

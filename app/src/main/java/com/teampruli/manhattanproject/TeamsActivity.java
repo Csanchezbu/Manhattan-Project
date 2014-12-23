@@ -1,6 +1,7 @@
 package com.teampruli.manhattanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ public class TeamsActivity extends Activity {
     private ListView teamsView;
     private NumberPicker pickerPlayers;
     private NumberPicker pickerTeams;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +105,8 @@ public class TeamsActivity extends Activity {
     }
 
     public void clickContinue(View view) {
-
+        Intent i = new Intent(this, StartGameActivity.class);
+        startActivity(i);
     }
 
     private void draw(final List<Team> teamList) {

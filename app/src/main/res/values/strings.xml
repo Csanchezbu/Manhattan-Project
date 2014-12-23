@@ -37,5 +37,17 @@
     <string name="team_number">Numero de equipos</string>
     <string name="empty_teams">Lista de equipos vacía</string>
     <string name="text_min_players">El número mínimo de jugadores es 4</string>
+    <string name="title_activity_start_game">StartGameActivity</string>
+    <string name="title_activity_next_turn">NextTurnActivity</string>
+    <string name="next_player">El siguiente en jugar es:</string>
+    <string name="next_player_guess">Adivina:</string>
+    <string name="next_team">Equipo:</string>
+    <string name="round1">Ronda 1</string>
+    <string name="round3">Ronda 3</string>
+    <string name="round2">Ronda 2</string>
+    <string name="rule_round1">reglas ronda 1</string>
+    <string name="rule_round2">reglas ronda 2</string>
+    <string name="rule_round3">Reglas ronda3</string>
+    <string name="title_activity_round">RoundActivity</string>
 
 </resources>
