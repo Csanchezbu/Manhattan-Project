@@ -134,4 +134,17 @@ public class GameManager {
     public void nextTeam() {
         this.indexTeam = (this.indexTeam + 1) % this.teamList.size();
     }
+
+    public Card getCard() {
+        return null; // TODO
+
+    }
+
+    public void nextCard() {
+
+    }
+
+    public void correctCard() {
+
+    }
 }

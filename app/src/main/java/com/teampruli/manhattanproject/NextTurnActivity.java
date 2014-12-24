@@ -1,6 +1,7 @@
 package com.teampruli.manhattanproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -77,6 +78,8 @@ public class NextTurnActivity extends Activity {
     }
 
     public void clickContinue(View view) {
+        Intent i = new Intent(this, RoundActivity.class);
+        startActivity(i);
 
     }
 }

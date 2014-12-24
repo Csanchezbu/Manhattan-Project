@@ -49,5 +49,10 @@
     <string name="rule_round2">reglas ronda 2</string>
     <string name="rule_round3">Reglas ronda3</string>
     <string name="title_activity_round">RoundActivity</string>
+    <string name="title_activity_turn_end">TurnEndActivity</string>
+    <string name="textEnd">Final del turno</string>
+    <string name="textEndMessage">Se acabó tu turno.</string>
+    <string name="pass">Pasar tarjeta</string>
+    <string name="correct">Acierto!</string>
 
 </resources>

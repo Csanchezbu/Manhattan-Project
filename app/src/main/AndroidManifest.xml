@@ -51,13 +51,16 @@
             android:label="@string/title_activity_game_summary" />
         <activity
             android:name=".StartGameActivity"
-            android:label="@string/title_activity_start_game"></activity>
+            android:label="@string/title_activity_start_game" />
         <activity
             android:name=".NextTurnActivity"
-            android:label="@string/title_activity_next_turn"></activity>
+            android:label="@string/title_activity_next_turn" />
         <activity
             android:name=".RoundActivity"
-            android:label="@string/title_activity_round"></activity>
+            android:label="@string/title_activity_round" />
+        <activity
+            android:name=".TurnEndActivity"
+            android:label="@string/title_activity_turn_end"></activity>
     </application>
 
 </manifest>
