@@ -22,6 +22,7 @@ public class RoundActivity extends Activity {
     private TextView textDescription;
     private GameManager gameManager;
     private Card cardPlaying;
+    CountDownTimer cron;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,12 @@ public class RoundActivity extends Activity {
         textCron = (TextView) findViewById(R.id.text_cron);
         textDescription = (TextView) findViewById(R.id.text_description);
         textTitle = (TextView) findViewById(R.id.text_title);
+        this.gameManager.startTurn();
 
         cardPlaying = this.gameManager.getCard();
 
         draw();
-        CountDownTimer cron = new CountDownTimer(30000, 1000) {
+        cron = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 textCron.setText(String.valueOf(millisUntilFinished / 1000));
@@ -49,6 +51,7 @@ public class RoundActivity extends Activity {
             @Override
             public void onFinish() {
                 textCron.setText(String.valueOf(0));
+                gameManager.endTurn();
                 new AlertDialog.Builder(RoundActivity.this)
                         .setTitle(R.string.textEnd)
                         .setMessage(R.string.textEndMessage)
@@ -60,7 +63,8 @@ public class RoundActivity extends Activity {
                         })
                         .show();
             }
-        }.start();
+        };
+        cron.start();
     }
 
     private void draw() {
@@ -92,13 +96,17 @@ public class RoundActivity extends Activity {
     }
 
     public void clickPass(View view) {
-        this.gameManager.nextCard();
+        this.gameManager.passCard();
         this.cardPlaying = this.gameManager.getCard();
         draw();
     }
 
     public void clickCorrect(View view) {
         this.gameManager.correctCard();
+        if (this.gameManager.isRoundFinished()) {
+            this.cron.onFinish();
+            return;
+        }
         this.cardPlaying = this.gameManager.getCard();
         draw();
     }

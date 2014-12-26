@@ -6,36 +6,29 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.teampruli.manhattanproject.TurnEndActivity"
+    tools:context="com.teampruli.manhattanproject.EndRoundActivity"
     android:orientation="vertical">
 
     <TextView
-        android:text="@string/correct_cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/round_end" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/button_continue"
-            android:text="@string/button_continue"
-            android:onClick="clickContinue" />
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_continue"
+        android:onClick="clickContinue" />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@android:id/list" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@android:id/empty" />
+        android:id="@+id/empty_list"
+        android:text="@string/empty_teams" />
 
 </LinearLayout>

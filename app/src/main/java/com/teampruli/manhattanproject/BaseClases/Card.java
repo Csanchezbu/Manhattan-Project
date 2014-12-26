@@ -8,12 +8,14 @@ public class Card implements Parcelable {
     private String title;
     private String description;
     private long id;
+    private CardState cardState;
 
 
     public Card(String title, String description, long id) {
         this.title = title;
         this.description = description;
         this.id = id;
+        this.cardState = CardState.NONE;
     }
 
     public Card(Parcel in) {
@@ -83,4 +85,11 @@ public class Card implements Parcelable {
         return (int) (id ^ (id >>> 32));
     }
 
+    public CardState getCardState() {
+        return cardState;
+    }
+
+    public void setCardState(CardState cardState) {
+        this.cardState = cardState;
+    }
 }

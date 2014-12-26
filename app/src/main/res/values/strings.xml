@@ -47,12 +47,18 @@
     <string name="round2">Ronda 2</string>
     <string name="rule_round1">reglas ronda 1</string>
     <string name="rule_round2">reglas ronda 2</string>
-    <string name="rule_round3">Reglas ronda3</string>
+    <string name="rule_round3">Reglas ronda3 </string>
     <string name="title_activity_round">RoundActivity</string>
     <string name="title_activity_turn_end">TurnEndActivity</string>
     <string name="textEnd">Final del turno</string>
     <string name="textEndMessage">Se acabó tu turno.</string>
     <string name="pass">Pasar tarjeta</string>
     <string name="correct">Acierto!</string>
+    <string name="title_activity_end_round">EndRoundActivity</string>
+    <string name="empty_players">No hay jugadores</string>
+    <string name="correct_cards">Comprueba que las respuestas son correctas</string>
+    <string name="title_activity_start_round">StartRoundActivity</string>
+    <string name="start">Empezar</string>
+    <string name="round_end">Fin de la ronda</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.teampruli.manhattanproject.BaseClases;
 
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +10,10 @@ import java.util.Random;
 
 
 public class GameManager {
+    public static final int ROUND_1 = 0;
+    public static final int ROUND_2 = 1;
+    public static final int ROUND_3 = 2;
+    public static final int END_GAME = 3;
 
     private static final int MIN_PLAYERS_TEAM = 2;
     private static final int MIN_TEAMS = 2;
@@ -17,6 +22,8 @@ public class GameManager {
     private Player[] playersList;
     private Random randomGenerator;
     private List<Card> cardList;
+    private List<Card> roundList;
+    private List<Card> turnList;
     private int round;
     private int indexTeam;
 
@@ -28,6 +35,8 @@ public class GameManager {
     private GameManager() {
         teamList = new ArrayList<>();
         cardList = new ArrayList<>();
+        roundList = new ArrayList<>();
+        turnList = new ArrayList<>();
         randomGenerator = new Random();
     }
 
@@ -113,7 +122,7 @@ public class GameManager {
         Collections.shuffle(cardList);
         this.cardList = cardList;
         Collections.shuffle(this.teamList);
-        this.round = 1;
+        this.round = GameManager.ROUND_1;
         this.indexTeam = 0;
         for (int i = 0; i < this.teamList.size(); i++) {
             this.teamList.get(i).startIndex();
@@ -136,15 +145,89 @@ public class GameManager {
     }
 
     public Card getCard() {
-        return null; // TODO
+        if (this.roundList.isEmpty()) {
+            return null;
+        } else
+            while (this.roundList.get(0).getCardState() == CardState.CORRECT) {
+                this.nextCard();
+            }
+        return this.roundList.get(0);
 
     }
 
     public void nextCard() {
-
+        Card auxCard = this.roundList.get(0);
+        this.roundList.remove(0);
+        this.roundList.add(auxCard);
     }
 
     public void correctCard() {
+        this.roundList.get(0).setCardState(CardState.CORRECT);
+        this.nextCard();
 
+    }
+
+    public void startRound() {
+        Log.d("manhattan", "start");
+        this.roundList.clear();
+        this.roundList.addAll(this.cardList);
+        Collections.shuffle(this.roundList);
+    }
+
+    public void startTurn() {
+        this.turnList.clear();
+        for (int i = 0; i < roundList.size(); i++) {
+            roundList.get(i).setCardState(CardState.NONE);
+        }
+
+    }
+
+    public void endTurn() {
+        for (Card card : this.roundList) {
+            if (card.getCardState() != CardState.NONE) {
+                this.turnList.add(card);
+            }
+        }
+    }
+
+    public void passCard() {
+        this.roundList.get(0).setCardState(CardState.PASSED);
+        this.nextCard();
+    }
+
+
+    public boolean isRoundFinished() {
+        if (this.roundList.isEmpty())
+            return true;
+        for (Card card : this.roundList) {
+            if (card.getCardState() != CardState.CORRECT)
+                return false;
+        }
+        return true;
+    }
+
+    public void endRound() {
+        if (this.round == GameManager.ROUND_1)
+            this.round = GameManager.ROUND_2;
+        else if (this.round == GameManager.ROUND_2)
+            this.round = GameManager.ROUND_3;
+        else if (this.round == GameManager.ROUND_3)
+            this.round = GameManager.END_GAME;
+        this.roundList.clear();
+        this.roundList.addAll(this.cardList);
+        this.turnList.clear();
+    }
+
+    public List<Card> getTurnList() {
+        return turnList;
+    }
+
+    public void correctAnswers(List<Card> correctCards) {
+        this.currentTeam().addCorrectAnswers(correctCards.size());
+        this.roundList.removeAll(correctCards);
+    }
+
+    public List<Card> getRoundList() {
+        return roundList;
     }
 }

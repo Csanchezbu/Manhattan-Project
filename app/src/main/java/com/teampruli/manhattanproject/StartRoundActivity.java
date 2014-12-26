@@ -9,28 +9,22 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.teampruli.manhattanproject.BaseClases.GameManager;
-import com.teampruli.manhattanproject.BaseClases.Team;
 
 
-public class NextTurnActivity extends Activity {
-    private TextView textRound;
-    private TextView textTeam;
-    private TextView textPlayer;
-    private TextView textGuess;
-    private TextView textRules;
+public class StartRoundActivity extends Activity {
+
     private GameManager gameManager;
+    private TextView textRound;
+    private TextView textRules;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_next_turn);
+        setContentView(R.layout.activity_start_round);
         this.gameManager = GameManager.getInstance();
-        textRound = (TextView) findViewById(R.id.text_round);
-        textTeam = (TextView) findViewById(R.id.text_team);
-        textPlayer = (TextView) findViewById(R.id.text_player);
-        textGuess = (TextView) findViewById(R.id.text_player_guess);
-        textRules = (TextView) findViewById(R.id.text_rules);
-        Team currentTeam = gameManager.currentTeam();
+        this.textRound = (TextView) findViewById(R.id.text_round);
+        this.textRules = (TextView) findViewById(R.id.text_rules);
+
         String rulesString = "", roundName = "";
 
         switch (this.gameManager.getRound()) {
@@ -51,16 +45,14 @@ public class NextTurnActivity extends Activity {
         }
         textRound.setText(roundName);
         textRules.setText(rulesString);
-        textTeam.setText(currentTeam.getName());
-        textPlayer.setText(currentTeam.currentPlayer().getName());
-        textGuess.setText(currentTeam.currentGuess().getName());
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_next_turn, menu);
+        getMenuInflater().inflate(R.menu.menu_start_round, menu);
         return true;
     }
 
@@ -79,8 +71,9 @@ public class NextTurnActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clickContinue(View view) {
-        Intent i = new Intent(this, RoundActivity.class);
+    public void startClick(View view) {
+        gameManager.startRound();
+        Intent i = new Intent(this, NextTurnActivity.class);
         startActivity(i);
     }
 }

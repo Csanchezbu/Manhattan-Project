@@ -48,7 +48,7 @@ public class StartGameActivity extends Activity {
 
     public void clickContinue(View view) {
         GameManager.getInstance().startGame(CardsManager.getInstance().getCardList());
-        Intent i = new Intent(this, NextTurnActivity.class);
+        Intent i = new Intent(this, StartRoundActivity.class);
         startActivity(i);
     }
 }

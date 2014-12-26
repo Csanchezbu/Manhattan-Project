@@ -10,11 +10,13 @@ public class Team {
     private List<Player> playerList;
     private int indexPlayer;
     private int indexGuess;
+    private int correctAnswers;
 
     public Team(int maxPlayers, String name) {
         this.name = name;
         this.maxPlayers = maxPlayers;
         this.playerList = new ArrayList<>();
+        this.correctAnswers = 0;
     }
 
     public String getName() {
@@ -65,5 +67,18 @@ public class Team {
     public void nextPlayer() {
         this.indexPlayer = this.indexGuess;
         this.updateIndex();
+    }
+
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public void setCorrectAnswers(int correctAnswers) {
+        this.correctAnswers = correctAnswers;
+    }
+
+    public void addCorrectAnswers(int correct) {
+        correctAnswers += correct;
     }
 }
